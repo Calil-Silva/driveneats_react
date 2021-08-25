@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./_configures/reset.css" />
+    <link rel="stylesheet" href="./_configures/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <Title>DrivenEats</Title>
+</head>
+
+<body>
+    <div class="frame">
+
+        <nav class="topBar">
+                <h1>FoodCamp</h1>
+                <h2>Sua comida em 6 minutos</h2>
+        </nav>
+
+        <main class="menus">
+
+                <header class="menuTitle">
+                    <p>Primeiro, seu prato</p>
+                </header>
+                <section class="menuOptions">
+                    <button id="Frango" onclick="pratoSelecionado(this);">
+                        <figure>
+                            <img src="./_files/frangoAssado.png" alt="Frango">
+                        </figure>
+                        <div class="description">
+                            <div class="optionTitle">
+                                <p>Frango</p>
+                            </div>
+                            <div class="optionDescription">
+                                <p>Um pouco de batata, um pouco de salada</p>
+                            </div>
+                            <div class="optionPrice a">
+                                <p>$ 14,90</p>
+                            </div>
+                        </div>
+                        <div class="hide" id="icon">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+    
+                    </button>
+                    <button id="Carne" onclick="pratoSelecionado(this);">
+                        <figure>
+                            <img src="./_files/frangoAssado.png" alt="Carne">
+                        </figure>
+                        <div class="description">
+                            <div class="optionTitle">
+                                <p>Carne</p>
+                            </div>
+                            <div class="optionDescription">
+                                <p>Um pouco de batata, um pouco de salada</p>
+                            </div>
+                            <div class="optionPrice a">
+                                <p>R$ 11,99</p>
+                            </div>
+                        </div>
+                        <div class="hide" id="icon">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </button>
+                    <button  id="Peixe" onclick="pratoSelecionado(this);">
+                        <figure>
+                            <img src="./_files/frangoAssado.png" alt="Peixe">
+                        </figure>
+                        <div class="description">
+                            <div class="optionTitle">
+                                <p>Peixe</p>
+                            </div>
+                            <div class="optionDescription">
+                                <p>Um pouco de batata, um pouco de salada</p>
+                            </div>
+                            <div class="optionPrice a">
+                                <p>R$ 25,40</p>
+                            </div>
+                        </div>
+                        <div class="hide" id="icon">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </button>
+                    <button  id="Ovos" onclick="pratoSelecionado(this);">
+                        <figure>
+                            <img src="./_files/frangoAssado.png" alt="Ovos">
+                        </figure>
+                        <div class="description">
+                            <div class="optionTitle">
+                                <p>Ovos</p>
+                            </div>
+                            <div class="optionDescription">
+                                <p>Um pouco de batata, um pouco de salada</p>
+                            </div>
+                            <div class="optionPrice a">
+                                <p>R$ 17,00</p>
+                            </div>
+                        </div>
+                        <div class="hide" id="icon">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </button>
+                    <button  id="Carne de soja" onclick="pratoSelecionado(this);">
+                        <figure>
+                            <img src="./_files/frangoAssado.png" alt="Carne de soja">
+                        </figure>
+                        <div class="description">
+                            <div class="optionTitle">
+                                <p>Carne de soja</p>
+                            </div>
+                            <div class="optionDescription">
+                                <p>Um pouco de batata, um pouco de salada</p>
+                            </div>
+                            <div class="optionPrice a">
+                                <p>R$ 32,40</p>
+                            </div>
+                        </div>
+                        <div class="hide" id="icon">
+                            <ion-icon name="checkmark-circle"></ion-icon>
+                        </div>
+                    </button>
+                </section>
+
+            <header class="menuTitle">
+                <p>Agora, sua bebida</p>
+            </header>
+            <section class="menuOptions">
+                <button  id="Coca" onclick="bebidaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/bebida.png" alt="Coca">
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Coquinha gelada</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Lata 350ml</p>
+                        </div>
+                        <div class="optionPrice b">
+                            <p>R$ 4,90</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Guaraná" onclick="bebidaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/bebida.png" alt="Guaraná">
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Guaraná gelada</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Lata 350ml</p>
+                        </div>
+                        <div class="optionPrice b">
+                            <p>R$ 7,80</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Fanta" onclick="bebidaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/bebida.png" alt="Fanta">
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Fantinha gelada</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Lata 350ml</p>
+                        </div>
+                        <div class="optionPrice b">
+                            <p>R$ 15,00</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Dolly" onclick="bebidaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/bebida.png" alt="Dolly">
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Dollynha gelada</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Lata 350ml</p>
+                        </div>
+                        <div class="optionPrice b">
+                            <p>R$ 21,00</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Chá" onclick="bebidaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/bebida.png" alt="Chá">
+                    </figure>   
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Chá gelado</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Lata 350ml</p>
+                        </div>
+                        <div class="optionPrice b">
+                            <p>R$ 9,50</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+            </section>
+
+            <header class="menuTitle">
+                <p>Por fim, sua sobremesa</p>
+            </header>
+            <section class="menuOptions">
+                <button  id="Brigadeirão" onclick="sobremesaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/sobremesa.png" alt="Brigadeirão">
+                    </figure> 
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Brigadeirão</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Apenas pudim</p>
+                        </div>
+                        <div class="optionPrice c">
+                            <p>R$ 7,90</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Pudim" onclick="sobremesaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/sobremesa.png" alt="Pudim">
+                    </figure>                       
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Pudim</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Apenas pudim</p>
+                        </div>
+                        <div class="optionPrice c">
+                            <p>R$ 15,99</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Bolo" onclick="sobremesaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/sobremesa.png" alt="Bolo">  
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Bolo</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Apenas pudim</p>
+                        </div>
+                        <div class="optionPrice c">
+                            <p>R$ 24,90</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Beijinho" onclick="sobremesaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/sobremesa.png" alt="Beijinho">
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Beijinho</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Apenas pudim</p>
+                        </div>
+                        <div class="optionPrice c">
+                            <p>R$ 10,40</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+                <button  id="Frutas" onclick="sobremesaSelecionada(this);">
+                    <figure>
+                        <img src="./_files/sobremesa.png" alt="Frutas">
+                    </figure>
+                    <div class="description">
+                        <div class="optionTitle">
+                            <p>Frutas</p>
+                        </div>
+                        <div class="optionDescription">
+                            <p>Apenas pudim</p>
+                        </div>
+                        <div class="optionPrice c">
+                            <p>R$ 27,90</p>
+                        </div>
+                    </div>
+                    <div class="hide" id="icon">
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </button>
+            </section>
+
+            <div class="confirmarPedido hide">
+                <div class="tituloConfirmação">
+                    <p>Confirme seu pedido</p>
+                </div>
+                <div class="confirmacao">
+                    <div id="checkPrato"></div>
+                    <div id="checkPrecoPrato"></div>
+                </div>
+                <div class="confirmacao">
+                    <div id="checkBebida"></div>
+                    <div id="checkPrecoBebida"></div>
+                </div>
+                <div class="confirmacao">
+                    <div id="checkSobremesa"></div>
+                    <div id="checkPrecoSobremesa"></div>
+                </div>
+                <div class="confirmacao">
+                    <div id="checkTotal"></div>
+                    <div id="checkPrecoTotal"></div>
+                </div>
+                <div class="confirmar">
+                    <button onclick="enviarMensagem();">Tudo certo, pode pedir!</button>
+                    <button onclick="cancelarPedido();">Cancelar</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bottomBar">
+            <div class="confirmOrder">
+                <h3>Selecione os 3 itens para fechar o pedido</h3>
+            </div>
+            <div class="orderConfirmed hide">
+                <a href="#">Finalizar pedido</a>
+            </div>
+        </footer>
+    </div>
+    <script src="./_configures/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
