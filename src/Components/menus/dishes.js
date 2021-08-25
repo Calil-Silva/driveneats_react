@@ -1,12 +1,12 @@
 export default function Dishes(props) {
     
-    const { dish, description, price } = props;
+    const { dish, img, description, price } = props;
 
     return (
         <>
-                <button id="Frango" onclick="pratoSelecionado(this);">
+                <button id="Frango" onClick={() => console.log(props)}>
                     <figure>
-                        <img src="./files/frangoAssado.png" alt={dish} />
+                        <img src={img} alt={dish} />
                     </figure>
                     <div className="description">
                         <div className="optionTitle">

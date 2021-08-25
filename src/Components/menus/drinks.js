@@ -1,12 +1,12 @@
 export default function Drinks(props) {
 
-    const { drink, description, price } = props;
+    const { drink, img, description, price } = props;
 
     return (
         <>
                 <button id="Coca" onclick="bebidaSelecionada(this);">
                     <figure>
-                        <img src="./files/bebida.png" alt={drink} />
+                        <img src={img} alt={drink} />
                     </figure>
                     <div className="description">
                         <div className="optionTitle">

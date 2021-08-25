@@ -2,13 +2,13 @@
 
 export default function Desserts(props) {
 
-    const { dessert, description, price } = props;
+    const { dessert, img, description, price } = props;
 
     return (
         <>
                 <button id="Brigadeirão" onclick="sobremesaSelecionada(this);">
                     <figure>
-                        <img src="./files/sobremesa.png" alt={dessert} />
+                        <img src={img} alt={dessert} />
                     </figure>
                     <div className="description">
                         <div className="optionTitle">
