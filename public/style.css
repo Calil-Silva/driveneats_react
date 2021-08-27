@@ -61,7 +61,6 @@ body {
     position: relative;
     width: 172px;
     height: 216px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     margin: 17px 16px 27px 0;
 }
@@ -159,20 +158,25 @@ body {
     box-shadow: 0 0 0 5px rgba(50, 183, 47, 1) inset;
 }
 
-ion-icon {
-    background-color: #fff;
-    color: rgba(50, 183, 47, 1);
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    margin: 0;
+.boxShadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.amount {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    width: 47px;
+    margin-bottom: 3px;
+}
+.amount div:first-child {
+    color: red;
+}
+.amount div:last-child {
+    color: rgb(50, 183, 47);
 }
 
 .hide {
     display: none;
-}
-
-.boxShadowVerde .hide {
-    display: initial;
 }
 /* Aplicar borda verde - final */

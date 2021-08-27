@@ -1,12 +1,38 @@
-
+import React, { useState } from 'react';
 
 export default function Desserts(props) {
 
     const { dessert, img, description, price } = props;
+    const [selected, setSelected] = useState("boxShadow");
+    const [amount, setAmount] = useState("hide");
+    const [addOrDecrease, setaddOrDecrease] = useState(0);
+
+    function selectThis() {
+
+        if(selected === "boxShadow") {
+            setSelected("boxShadowVerde")
+            setAmount("amount")
+            setaddOrDecrease(1)
+         }
+    }
+
+
+    function operation(option) {
+        if(option === "+") {
+            setaddOrDecrease(addOrDecrease + 1)
+        } else {
+            setaddOrDecrease(addOrDecrease - 1)
+        }
+
+        if(addOrDecrease === 1 && option === "-") {
+            setSelected("boxShadow");
+            setAmount("hide");
+        }
+    }
 
     return (
         <>
-                <button id="Brigadeirão" onclick="sobremesaSelecionada(this);">
+                <button className={selected} id={dessert} onClick={selectThis}>
                     <figure>
                         <img src={img} alt={dessert} />
                     </figure>
@@ -21,8 +47,10 @@ export default function Desserts(props) {
                             <p>{price}</p>
                         </div>
                     </div>
-                    <div className="hide" id="icon">
-                        <ion-icon name="checkmark-circle"></ion-icon>
+                    <div className={amount} id="icon">
+                        <div onClick={() => operation("-")}>-</div>
+                        <div>{addOrDecrease}</div>
+                        <div onClick={() => operation("+")}>+</div>
                     </div>
                 </button>
         </>
