@@ -1,6 +1,8 @@
 import Desserts from "./desserts";
 import Dishes from "./dishes";
 import Drinks from "./drinks";
+import React, { useState } from "react";
+import BottomBar from "../bottomBar/bottomBar";
 
 const dishes = [
     {
@@ -114,29 +116,37 @@ const desserts = [
 ]
 
 export default function Menus() {
+
+    const [orderDish, setOrderDish] = useState(0)
+    const [orderDrink, setOrderDrink] = useState(0)
+    const [orderDessert, setOrderDessert] = useState(0)
+
     return (
-        <main className="menus">
-            <header className="menuTitle">
-                <p>Primeiro, seu prato</p>
-            </header>
-            <section className="menuOptions">
-            {dishes.map((element, index) => <Dishes key={index} dish={element.dish} img={element.img} description={element.description} price={element.price} />)}
-            </section>
+        <>
+            <main className="menus">
+                <header className="menuTitle">
+                    <p>Primeiro, seu prato</p>
+                </header>
+                <section className="menuOptions">
+                    {dishes.map((element, index) => <Dishes key={index} dish={element.dish} img={element.img} description={element.description} price={element.price} fun={(order) => (order === "boxShadowVerde" ? setOrderDish(orderDish + 1) : setOrderDish(orderDish - 1))} />)}
+                </section>
 
-            <header className="menuTitle">
-                <p>Agora, sua bebida</p>
-            </header>
-            <section className="menuOptions">
-            {drinks.map((element, index) => <Drinks key={index} drink={element.drink} img={element.img} description={element.description} price={element.price} />)}
-            </section>
+                <header className="menuTitle">
+                    <p>Agora, sua bebida</p>
+                </header>
+                <section className="menuOptions">
+                    {drinks.map((element, index) => <Drinks key={index} drink={element.drink} img={element.img} description={element.description} price={element.price}  fun={(order) => (order === "boxShadowVerde" ? setOrderDrink(orderDrink + 1) : setOrderDrink(orderDrink - 1))}/>)}
+                </section>
 
-            
-            <header className="menuTitle">
-                <p>Por fim, sua sobremesa</p>
-            </header>
-            <section className="menuOptions">
-            {desserts.map((element, index) => <Desserts key={index} drink={element.dessert} img={element.img} description={element.description} price={element.price} />)}
-            </section>
-        </main>
+                <header className="menuTitle">
+                    <p>Por fim, sua sobremesa</p>
+                </header>
+                <section className="menuOptions">
+                    {desserts.map((element, index) => <Desserts key={index} drink={element.dessert} img={element.img} description={element.description} price={element.price}  fun={(order) => (order === "boxShadowVerde" ? setOrderDessert(orderDessert + 1) : setOrderDessert(orderDessert - 1))}/>)}
+                </section>
+            </main>
+
+            <BottomBar countDishes={orderDish} countDrinks={orderDrink} countDesserts={orderDessert}/>
+        </>
     )
 }

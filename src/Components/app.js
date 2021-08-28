@@ -9,15 +9,6 @@ export default function App() {
             </nav>
 
             <Menus />
-                
-            <footer className="bottomBar">
-                <div className="confirmOrder">
-                    <h3>Selecione os 3 itens para fechar o pedido</h3>
-                </div>
-                <div className="orderConfirmed hide">
-                    <a href="#">Finalizar pedido</a>
-                </div>
-            </footer>
         </>
     )
 }

@@ -4,7 +4,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: rgb(238, 238, 238);
 }
 
 
@@ -140,16 +139,13 @@ body {
     font-family: 'Roboto', sans-serif;
     padding-right: 60px;
     padding-left: 60px;
+    color: #fff;
 }
-.orderConfirmed {
-    display: flex;
-    height: 61px;
-    width: 364px;
-    background: rgba(203, 203, 203, 1);
-    border-radius: 50px;
-    margin: 50px;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
+.confirmed {
+    background: #32B72F;
+    font-weight: 700;
+    color: red;
+    text-decoration: none;
 }
 /* BOTTOMBAR - final */
 

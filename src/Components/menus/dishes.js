@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function Dishes(props) {
     
-    const { dish, img, description, price } = props;
+    const { dish, img, description, price, fun } = props;
     const [selected, setSelected] = useState("boxShadow");
     const [amount, setAmount] = useState("hide");
     const [addOrDecrease, setaddOrDecrease] = useState(0);
@@ -13,6 +13,7 @@ export default function Dishes(props) {
             setSelected("boxShadowVerde")
             setAmount("amount")
             setaddOrDecrease(1)
+            fun("boxShadowVerde")
          }
     }
 
@@ -20,13 +21,16 @@ export default function Dishes(props) {
     function operation(option) {
         if(option === "+") {
             setaddOrDecrease(addOrDecrease + 1)
+            fun("boxShadowVerde")
         } else {
             setaddOrDecrease(addOrDecrease - 1)
+            fun("boxShadow");
         }
 
         if(addOrDecrease === 1 && option === "-") {
             setSelected("boxShadow");
             setAmount("hide");
+            fun("boxShadow");
         }
     }
 
