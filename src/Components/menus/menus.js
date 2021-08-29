@@ -115,12 +115,26 @@ const desserts = [
     }
 ]
 
+
+
 export default function Menus() {
 
     const [orderDish, setOrderDish] = useState(0)
     const [orderDrink, setOrderDrink] = useState(0)
     const [orderDessert, setOrderDessert] = useState(0)
+    const [arrayDish, setArrayDish] = useState([])
+    const [dishAmount, setDishAmount] = useState([1])
 
+    function arrayDishes(choice) {
+        setArrayDish([choice]);
+    }
+
+    function chooseDishAmount(choice) {
+        setDishAmount([choice])
+    }
+
+    let x = dishes.map((element, index) => <Dishes key={index} dish={element.dish} img={element.img} description={element.description} price={element.price} fun={(order) => (order === "boxShadowVerde" ? setOrderDish(orderDish + 1) : setOrderDish(orderDish - 1))} fun2={(choice) => arrayDishes(choice)} fun3={(choice) => chooseDishAmount(choice)}/>)
+    // x.forEach((el) => console.log(el.props.dish))
     return (
         <>
             <main className="menus">
@@ -128,7 +142,7 @@ export default function Menus() {
                     <p>Primeiro, seu prato</p>
                 </header>
                 <section className="menuOptions">
-                    {dishes.map((element, index) => <Dishes key={index} dish={element.dish} img={element.img} description={element.description} price={element.price} fun={(order) => (order === "boxShadowVerde" ? setOrderDish(orderDish + 1) : setOrderDish(orderDish - 1))} />)}
+                    {x}
                 </section>
 
                 <header className="menuTitle">
@@ -146,7 +160,7 @@ export default function Menus() {
                 </section>
             </main>
 
-            <BottomBar countDishes={orderDish} countDrinks={orderDrink} countDesserts={orderDessert}/>
+            <BottomBar countDishes={orderDish} countDrinks={orderDrink} countDesserts={orderDessert} arrayDish={arrayDish} dishAmount={dishAmount}/>
         </>
     )
 }

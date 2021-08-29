@@ -1,9 +1,20 @@
-export default function BottomBar( {countDishes, countDrinks, countDesserts} ) {
+import React, { useState } from "react"
+
+export default function BottomBar( {countDishes, countDrinks, countDesserts, arrayDish, dishAmount} ) {
+    const[myArray, setMyArray] = useState([{dish: arrayDish, amount: dishAmount}])
+
+    function setArray() {
+        setMyArray([...myArray, {dish: arrayDish, amount: dishAmount}])
+        let noRepetitionArray = [... new Set(myArray)]
+        console.log(noRepetitionArray)
+    }
+
+
     if(countDishes > 0 && countDrinks > 0 && countDesserts > 0) {
         return (
             <footer className="bottomBar">
                 <div className="confirmOrder confirmed">
-                    <a href="#">Finalizar pedido</a>
+                    <a href="#" onClick={setArray}>Finalizar Pedido</a>
                 </div>
             </footer>
         )
