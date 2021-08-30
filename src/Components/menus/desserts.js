@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function Desserts(props) {
 
-    const { dessert, img, description, price, fun } = props;
+    const { dessert, img, description, price, orderAmount, dessertAmount, hasBoxShadowVerde } = props;
     const [selected, setSelected] = useState("boxShadow");
     const [amount, setAmount] = useState("hide");
     const [addOrDecrease, setaddOrDecrease] = useState(0);
@@ -13,7 +13,8 @@ export default function Desserts(props) {
             setSelected("boxShadowVerde")
             setAmount("amount")
             setaddOrDecrease(1)
-            fun("boxShadowVerde")
+            orderAmount("boxShadowVerde")
+            hasBoxShadowVerde("boxShadowVerde")
          }
     }
 
@@ -21,16 +22,18 @@ export default function Desserts(props) {
     function operation(option) {
         if(option === "+") {
             setaddOrDecrease(addOrDecrease + 1)
-            fun("boxShadowVerde")
+            orderAmount("boxShadowVerde")
+            dessertAmount(addOrDecrease + 1)
         } else {
             setaddOrDecrease(addOrDecrease - 1)
-            fun("boxShadow");
+            orderAmount("boxShadow");
+            dessertAmount(addOrDecrease - 1)
         }
 
         if(addOrDecrease === 1 && option === "-") {
             setSelected("boxShadow");
             setAmount("hide");
-            fun("boxShadow");
+            orderAmount("boxShadow");
         }
     }
 
