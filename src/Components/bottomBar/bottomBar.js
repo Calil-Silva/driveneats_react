@@ -1,4 +1,4 @@
-// import React, { useState } from "react"
+import React, { useState } from "react";
 
 export default function BottomBar( {countDishes, countDrinks, countDesserts, dishes, drinks, desserts} ) {
     let selectedDishesArray;
@@ -8,7 +8,9 @@ export default function BottomBar( {countDishes, countDrinks, countDesserts, dis
     let prepMsgDrink;
     let prepMsgDessert;
     let orderArray = [];
-    let msg;
+    let msg = "";
+
+    const [encodeMsg, setEncodeMsg] = useState("")
 
 
     function selectedDishes() {
@@ -18,15 +20,19 @@ export default function BottomBar( {countDishes, countDrinks, countDesserts, dis
         prepMsgDish = selectedDishesArray.map((el) => (el.amount > 1) ? `Prato: ${el.option} (${el.amount}x)` : `Prato: ${el.option}`);
         prepMsgDrink = selectedDrinksArray.map((el) => (el.amount > 1) ? `Bebida: ${el.option} (${el.amount}x)` : `Bebida: ${el.option}`);
         prepMsgDessert = selectedDessertsArray.map((el) => (el.amount > 1) ? `Sobremesa: ${el.option} (${el.amount}x)` : `Sobremesa: ${el.option}`);
-        orderArray = [...prepMsgDish, ...prepMsgDrink, ...prepMsgDessert];
-        console.log(orderArray);
+        orderArray = ["Olá, gostaria de fazer o pedido:", ...prepMsgDish, ...prepMsgDrink, ...prepMsgDessert];
+
+        for(let i = 0; i < orderArray.length; i ++) {
+            msg += `${orderArray[i]} \n`;
+        }
+        setEncodeMsg(encodeURIComponent(msg));
     }
 
     if(countDishes > 0 && countDrinks > 0 && countDesserts > 0) {
         return (
             <footer className="bottomBar">
                 <div className="confirmOrder confirmed">
-                    <a href="#" onClick={selectedDishes}>Finalizar Pedido</a>
+                    <a href={`https://wa.me/?text=${encodeMsg}`} onClick={selectedDishes}>Finalizar Pedido</a>
                 </div>
             </footer>
         )
